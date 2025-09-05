@@ -1,0 +1,2 @@
+Monitor Results:
+	Xtop |Ex| =  1.043289E+00
