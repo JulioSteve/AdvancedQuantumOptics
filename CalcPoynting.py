@@ -61,11 +61,10 @@ PList = np.array(PList)
 
 ### Integrating the mean Poynting on surface to get the Power
 d = 1e-8
-N = len(PList[0][0])
 dS = [np.array([-1,0,0]), np.array([1,0,0]), np.array([0,-1,0]), np.array([0,1,0]), np.array([0,0,-1]), np.array([0,0,1])]
 POWER = []
 for i, Pmean in enumerate(PList):
-    ds = dS[i]*d #depends on the monitor, normal vector goes OUTSIDE AND meshgrid size (here 0.01µm)
+    ds = dS[i]*d**2 #depends on the monitor, normal vector goes OUTSIDE AND meshgrid size (here 0.01µm)
     POWER.append(np.sum(Pmean[0]*ds[0]+Pmean[1]*ds[1]+Pmean[2]*ds[2]))
 
 STR = []
@@ -74,5 +73,5 @@ for i,axe in enumerate(ANames):
         STR.append(axe+direction)
 
 for i, pow in enumerate(POWER):
-    strpow = f"{pow*1e6:.2f}"
-    print(STR[i]+": P = "+strpow+" µW")
+    strpow = f"{pow*1e15:.2f}"
+    print(STR[i]+": P = "+strpow+" fW")
