@@ -98,4 +98,4 @@ phi_p = phi_e0+np.arcsin(2*P0/(k*c*E0x*p_norme))
 print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°"+"\n")
 
 Power_reconstruction_test = k*c/2*p_norme*np.sin(phi_p-phi_e0)*E0x
-print(f"{Power_reconstruction_test*1e3:.3f} mW = {P0*1e3:.3f} mW !" )
+print(f"Reconstruction: {Power_reconstruction_test*1e3:.3f} mW = Simulation {P0*1e3:.3f} mW !" )
