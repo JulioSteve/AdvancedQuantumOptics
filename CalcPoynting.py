@@ -1,6 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+eps0 = 8.854e-12
+mu0 = 4*np.pi*1e-7
+
+Z0 = np.sqrt(mu0/eps0)
+
 ANames = ["X","Y","Z"]
 DNames = ["bot","top"]
 FNames = "ex,ey,ez,hx,hy,hz".split(",")
@@ -47,8 +52,8 @@ checkplot()
 DATA_reshape = [DATA[i*6 : (i+1)*6] for i in range(6)]
 PList = []
 for i,monitor in enumerate(DATA_reshape):
-    E = monitor[:3]
-    H = np.conjugate(monitor[3:]) #actually the conjugate of H, called H to be concise.
+    E = np.array(monitor[:3])*1e6
+    H = np.conjugate(monitor[3:])/Z0*1e6 #actually the conjugate of H, called H to be concise.
     P = np.array([
         E[1]*H[2]-E[2]*H[1], 
         E[2]*H[0]-E[0]*H[2], 
@@ -73,5 +78,24 @@ for i,axe in enumerate(ANames):
         STR.append(axe+direction)
 
 for i, pow in enumerate(POWER):
-    strpow = f"{pow*1e15:.2f}"
-    print(STR[i]+": P = "+strpow+" fW")
+    strpow = f"{pow*1e3:.2f}"
+    print(STR[i]+": P = "+strpow+" mW")
+print("\n"+f"Total Power: Ptot = {sum(POWER)*1e3:.3f} mW")
+
+P0 = sum(POWER) #Total power in the vacuum calculated
+
+WL = 800e-9 #wavelength in m
+c = 299_792_458 #m/s
+k = 2*np.pi/WL
+
+p_norme = np.sqrt(12*np.pi*eps0/(c*k**4)*P0)
+
+print(f"Norme of dipole moment: {p_norme*1e24:.2f}e-24  C m"+"\n")
+
+E0x = 8.209492e3*1e6
+phi_e0 = 8.997717*np.pi/180
+phi_p = phi_e0+np.arcsin(2*P0/(k*c*E0x*p_norme))
+print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°"+"\n")
+
+Power_reconstruction_test = k*c/2*p_norme*np.sin(phi_p-phi_e0)*E0x
+print(f"{Power_reconstruction_test*1e3:.3f} mW = {P0*1e3:.3f} mW !" )
