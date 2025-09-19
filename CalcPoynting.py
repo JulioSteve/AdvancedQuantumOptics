@@ -9,7 +9,7 @@ Z0 = np.sqrt(mu0/eps0)
 ANames = ["X","Y","Z"]
 DNames = ["bot","top"]
 FNames = "ex,ey,ez,hx,hy,hz".split(",")
-path = "RSoft/"
+path = "VacuumDATA/"
 
 
 ### Storing data
@@ -111,6 +111,6 @@ def test_equal(Ptest,Pref):
         return "!="
 
 
-print(f"Reconstruction with first angle {phi_p:.2f}°: {Power_reconstruction_test*1e3:.3f} mW {test_equal(Power_reconstruction_test,P0)} Simulation {P0*1e3:.3f} mW" )
-print(f"Reconstruction with second angle {phi_p2:.2f}°: {Power_reconstruction_test2*1e3:.3f} mW {test_equal(Power_reconstruction_test2,P0)} Simulation {P0*1e3:.3f} mW" )
+print(f"Reconstruction with first angle {phi_p*180/np.pi:.2f}°: {Power_reconstruction_test*1e3:.3f} mW {test_equal(Power_reconstruction_test,P0)} Simulation {P0*1e3:.3f} mW" )
+print(f"Reconstruction with second angle {phi_p2*180/np.pi:.2f}°: {Power_reconstruction_test2*1e3:.3f} mW {test_equal(Power_reconstruction_test2,P0)} Simulation {P0*1e3:.3f} mW" )
 print(f"Dephasage: {(phi_p-phi_e0)*180/np.pi:.2e}° or {(phi_p2-phi_e0)*180/np.pi:.2e}°")
