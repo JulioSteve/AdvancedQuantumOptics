@@ -95,7 +95,22 @@ print(f"Norme of dipole moment: {p_norme*1e24:.2f}e-24  C m"+"\n")
 E0x = 8.209492e3*1e6
 phi_e0 = 8.997717*np.pi/180
 phi_p = phi_e0+np.arcsin(2*P0/(k*c*E0x*p_norme))
-print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°"+"\n")
+phi_p2 = phi_e0+np.pi-np.arcsin(2*P0/(k*c*E0x*p_norme)) #This value is not the right one.
+print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°")
+print(f"The other theoretical value is {phi_p2*180/np.pi:.2f}°\n")
 
 Power_reconstruction_test = k*c/2*p_norme*np.sin(phi_p-phi_e0)*E0x
-print(f"Reconstruction: {Power_reconstruction_test*1e3:.3f} mW = Simulation {P0*1e3:.3f} mW !" )
+Power_reconstruction_test2 = k*c/2*p_norme*np.sin(phi_p2-phi_e0)*E0x
+
+def test_equal(Ptest,Pref):
+    Ptest = np.round(Ptest,3)
+    Pref = np.round(Pref,3)
+    if Ptest == Pref:
+        return "=="
+    else:
+        return "!="
+
+
+print(f"Reconstruction with first angle {phi_p:.2f}°: {Power_reconstruction_test*1e3:.3f} mW {test_equal(Power_reconstruction_test,P0)} Simulation {P0*1e3:.3f} mW" )
+print(f"Reconstruction with second angle {phi_p2:.2f}°: {Power_reconstruction_test2*1e3:.3f} mW {test_equal(Power_reconstruction_test2,P0)} Simulation {P0*1e3:.3f} mW" )
+print(f"Dephasage: {(phi_p-phi_e0)*180/np.pi:.2e}° or {(phi_p2-phi_e0)*180/np.pi:.2e}°")
