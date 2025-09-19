@@ -1,0 +1,2 @@
+Monitor Results:
+	E0 |Ez| =  7.674519E+03, phase(Ez) = 89.8269
