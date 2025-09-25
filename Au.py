@@ -80,37 +80,25 @@ for i,axe in enumerate(ANames):
 for i, pow in enumerate(POWER):
     strpow = f"{pow*1e3:.2e}"
     print(STR[i]+": P = "+strpow+" mW")
-print("\n"+f"Total Power: Ptot = {sum(POWER)*1e3:.3f} mW")
+print("\n"+f"Total Power: Prad = {sum(POWER)*1e3:.3f} mW")
 
-Ptot = sum(POWER) #Total power in the vacuum calculated
+Prad = sum(POWER) #Total power in the vacuum around gold radiated
 
 WL = 800e-9 #wavelength in m
 c = 299_792_458 #m/s
 k = 2*np.pi/WL
 
-p_norme = np.sqrt(12*np.pi*eps0/(c*k**4)*Ptot)
-
-print(f"Norme of dipole moment: {p_norme*1e24:.2f}e-24  C m"+"\n")
+p_norme = 1.13e-24 #comes from pure vacuum sim
+P0 = 4.398e-3 #comes from pure vacuum sim
 
 E0z = 7.674519e3*1e6
 phi_e0 = 89.8269*np.pi/180
-phi_p = phi_e0+np.arcsin(2*Ptot/(k*c*E0z*p_norme))
-phi_p2 = phi_e0+np.pi-np.arcsin(2*Ptot/(k*c*E0z*p_norme)) #This value is not the right one.
+phi_p = phi_e0+np.arcsin(2*P0/(k*c*E0z*p_norme))
+phi_p2 = phi_e0+np.pi-np.arcsin(2*P0/(k*c*E0z*p_norme)) 
 print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°")
 print(f"The other theoretical value is {phi_p2*180/np.pi:.2f}°\n")
+deff_1 = abs(phi_p-phi_e0)
+deff_2 = abs(phi_p2-phi_e0)
+print(f"Phase shift (phi_p-phi_E) --- 1st possible angle: {deff_1*180/np.pi:.2f}°, 2nd possible angle: {deff_2*180/np.pi:.2f}°")
 
-Power_reconstruction_test = k*c/2*p_norme*np.sin(phi_p-phi_e0)*E0z
-Power_reconstruction_test2 = k*c/2*p_norme*np.sin(phi_p2-phi_e0)*E0z
-
-def test_equal(Ptest,Pref):
-    Ptest = np.round(Ptest,3)
-    Pref = np.round(Pref,3)
-    if Ptest == Pref:
-        return "=="
-    else:
-        return "!="
-
-
-print(f"Reconstruction with first angle {phi_p*180/np.pi:.2f}°: {Power_reconstruction_test*1e3:.3f} mW {test_equal(Power_reconstruction_test,Ptot)} Simulation {Ptot*1e3:.3f} mW" )
-print(f"Reconstruction with second angle {phi_p2*180/np.pi:.2f}°: {Power_reconstruction_test2*1e3:.3f} mW {test_equal(Power_reconstruction_test2,Ptot)} Simulation {Ptot*1e3:.3f} mW" )
-print(f"Dephasage: {(phi_p-phi_e0)*180/np.pi:.2e}° or {(phi_p2-phi_e0)*180/np.pi:.2e}°")
+P = k*c/2*E0z*p_norme*np.sin(deff_1) #Chosing the other possible angle is useless, sinus being pi-periodic
