@@ -94,10 +94,11 @@ P0 = 4.398e-3 #comes from pure vacuum sim
 E0z =  7.729067e3*1e6
 phi_e0 = 89.8849*np.pi/180
 phi_p = phi_e0+np.arcsin(2*P0/(k*c*E0z*p_norme))
+print(phi_p)
 phi_p2 = phi_e0+np.pi-np.arcsin(2*P0/(k*c*E0z*p_norme)) 
 print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°")
 print(f"The other theoretical value is {phi_p2*180/np.pi:.2f}°\n")
-Power_reconstruction_test = k*c/2*p_norme*np.sin(phi_p-phi_e0)*E0z
+Power_reconstruction_test = k*c/2*np.imag(p_norme*np.exp(1j*phi_p)*E0z*np.exp(-1j*phi_e0))
 Power_reconstruction_test2 = k*c/2*p_norme*np.sin(phi_p2-phi_e0)*E0z
 
 def test_equal(Ptest,Pref):
@@ -110,6 +111,7 @@ def test_equal(Ptest,Pref):
 
 print(f"Phase shift: {(phi_p-phi_e0)*180/np.pi:.2e}° or {(phi_p2-phi_e0)*180/np.pi:.2e}°\n")
 print(f"Total power: Ptot = {Power_reconstruction_test*1e3:.2f} mW\n")
+print(f"Total power: Ptot 2= {Power_reconstruction_test2*1e3:.2f} mW\n")
 
 P0 = 4.398e-3 #Calculated in CalcPoynting.py from Vacuum
 

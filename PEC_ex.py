@@ -88,19 +88,15 @@ WL = 800e-9 #wavelength in m
 c = 299_792_458 #m/s
 k = 2*np.pi/WL
 
-p_norme = np.sqrt(12*np.pi*eps0/(c*k**4)*Prad)
-
-print(f"Norme of dipole moment: {p_norme*1e24:.2f}e-24  C m"+"\n")
-
 E0z = 8.070205e3*1e6
 phi_e0 = 89.9995*np.pi/180
-phi_p = phi_e0+np.arcsin(2*Prad/(k*c*E0z*p_norme))
-phi_p2 = phi_e0+np.pi-np.arcsin(2*Prad/(k*c*E0z*p_norme)) #This value is not the right one.
+phi_p = 0.15744093603944595; phi_p2 = 3.2982312911756804
+p_norme = 1.13e-24
 print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°")
 print(f"The other theoretical value is {phi_p2*180/np.pi:.2f}°\n")
 
-Power_reconstruction_test = k*c/2*p_norme*np.sin(phi_p-phi_e0)*E0z
-Power_reconstruction_test2 = k*c/2*p_norme*np.sin(phi_p2-phi_e0)*E0z
+Power_reconstruction_test = k*c/2*np.imag(p_norme*np.exp(1j*phi_p)*E0z*np.exp(-1j*phi_e0))
+Power_reconstruction_test2 = k*c/2*np.imag(p_norme*np.exp(1j*phi_p2)*E0z*np.exp(-1j*phi_e0))
 
 def test_equal(Ptest,Pref):
     Ptest = np.round(Ptest,3)

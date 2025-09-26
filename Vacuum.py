@@ -9,7 +9,7 @@ Z0 = np.sqrt(mu0/eps0)
 ANames = ["X","Y","Z"]
 DNames = ["bot","top"]
 FNames = "ex,ey,ez,hx,hy,hz".split(",")
-path = "PECDATA/"
+path = "VacuumDATA/"
 
 
 ### Storing data
@@ -18,7 +18,7 @@ Poynting = np.empty(shape=(6,3))
 for i,axe in enumerate(ANames):
     for j,direction in enumerate(DNames):
         for k,field in enumerate(FNames):
-            filename = "fwtmp_"+axe+direction+"_f1_"+field+".dat"
+            filename = "Res_"+axe+direction+"_f1_"+field+".dat"
             file = np.loadtxt(path+filename, skiprows=4)
             AMP = file[:, ::2]
             PH = file[:, 1::2]*np.pi/180
@@ -78,27 +78,30 @@ for i,axe in enumerate(ANames):
         STR.append(axe+direction)
 
 for i, pow in enumerate(POWER):
-    strpow = f"{pow*1e3:.2e}"
+    strpow = f"{pow*1e3:.2f}"
     print(STR[i]+": P = "+strpow+" mW")
-print("\n"+f"Radiated Power: Prad = {sum(POWER)*1e3:.3f} mW")
+print("\n"+f"Total Power: Ptot = {sum(POWER)*1e3:.3f} mW")
 
-Prad = sum(POWER) #Total power in the vacuum calculated
+P0 = sum(POWER) #Total power in the vacuum calculated
 
 WL = 800e-9 #wavelength in m
 c = 299_792_458 #m/s
 k = 2*np.pi/WL
 
-p_norme = 1.13e-24
+p_norme = np.sqrt(12*np.pi*eps0/(c*k**4)*P0)
 
-E0z = 7.784208e3*1e6
-phi_e0 = 89.9521*np.pi/180
-phi_p = 1.57079941
-phi_p2 = 4.71159003
+print(f"Norme of dipole moment: {p_norme*1e24:.2f}e-24  C m"+"\n")
+
+E0x = 8.209492e3*1e6
+phi_e0 = 8.997717*np.pi/180
+phi_p = phi_e0+np.arcsin(2*P0/(k*c*E0x*p_norme))
+phi_p2 = phi_e0+np.pi-np.arcsin(2*P0/(k*c*E0x*p_norme)) #This value is not the right one.
+print(f"phi_p = {phi_p}; phi_p2 = {phi_p2}")
 print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°")
 print(f"The other theoretical value is {phi_p2*180/np.pi:.2f}°\n")
 
-Power_reconstruction_test = k*c/2*np.imag(p_norme*np.exp(1j*phi_p)*E0z*np.exp(-1j*phi_e0))
-Power_reconstruction_test2 = k*c/2*np.imag(p_norme*np.exp(1j*phi_p2)*E0z*np.exp(-1j*phi_e0))
+Power_reconstruction_test = k*c/2*p_norme*np.sin(phi_p-phi_e0)*E0x
+Power_reconstruction_test2 = k*c/2*p_norme*np.sin(phi_p2-phi_e0)*E0x
 
 def test_equal(Ptest,Pref):
     Ptest = np.round(Ptest,3)
@@ -109,15 +112,6 @@ def test_equal(Ptest,Pref):
         return "!="
 
 
-print(f"Reconstruction with first angle {phi_p*180/np.pi:.2f}°: {Power_reconstruction_test*1e3:.3f} mW {test_equal(Power_reconstruction_test,Prad)} Simulation {Prad*1e3:.3f} mW" )
-print(f"Reconstruction with second angle {phi_p2*180/np.pi:.2f}°: {Power_reconstruction_test2*1e3:.3f} mW {test_equal(Power_reconstruction_test2,Prad)} Simulation {Prad*1e3:.3f} mW" )
-print(f"Dephasage: {(phi_p-phi_e0)*180/np.pi:.2e}° or {(phi_p2-phi_e0)*180/np.pi:.2e}°\n")
-
-P0 = 4.398e-3 #Calculated in CalcPoynting.py from Vacuum
-
-gammar_gamma0 = Prad/P0
-gamma_gamma0 = Power_reconstruction_test/P0
-q = gammar_gamma0/gamma_gamma0
-print(f"gamma_r/gamma_0 = {gammar_gamma0:.2f}")
-print(f"gamma/gamma_0 = {gamma_gamma0:.2f}")
-print(f"Quantum yield is ~~ {q:.2f}")
+print(f"Reconstruction with first angle {phi_p*180/np.pi:.2f}°: {Power_reconstruction_test*1e3:.3f} mW {test_equal(Power_reconstruction_test,P0)} Simulation {P0*1e3:.3f} mW" )
+print(f"Reconstruction with second angle {phi_p2*180/np.pi:.2f}°: {Power_reconstruction_test2*1e3:.3f} mW {test_equal(Power_reconstruction_test2,P0)} Simulation {P0*1e3:.3f} mW" )
+print(f"Phase shift: first angle {(phi_p-phi_e0)*180/np.pi:.2e}° or second angle {(phi_p2-phi_e0)*180/np.pi:.2e}°")
