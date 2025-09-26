@@ -9,7 +9,7 @@ Z0 = np.sqrt(mu0/eps0)
 ANames = ["X","Y","Z"]
 DNames = ["bot","top"]
 FNames = "ex,ey,ez,hx,hy,hz".split(",")
-path = "PECDATA/"
+path = "PECxDATA/"
 
 
 ### Storing data
@@ -92,8 +92,8 @@ p_norme = np.sqrt(12*np.pi*eps0/(c*k**4)*Prad)
 
 print(f"Norme of dipole moment: {p_norme*1e24:.2f}e-24  C m"+"\n")
 
-E0z = 7.784208e3*1e6
-phi_e0 = 89.9521*np.pi/180
+E0z = 8.070205e3*1e6
+phi_e0 = 89.9995*np.pi/180
 phi_p = phi_e0+np.arcsin(2*Prad/(k*c*E0z*p_norme))
 phi_p2 = phi_e0+np.pi-np.arcsin(2*Prad/(k*c*E0z*p_norme)) #This value is not the right one.
 print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°")

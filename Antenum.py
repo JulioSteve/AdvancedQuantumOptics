@@ -9,7 +9,7 @@ Z0 = np.sqrt(mu0/eps0)
 ANames = ["X","Y","Z"]
 DNames = ["bot","top"]
 FNames = "ex,ey,ez,hx,hy,hz".split(",")
-path = "PECDATA/"
+path = "Antenum/"
 
 
 ### Storing data
@@ -82,23 +82,21 @@ for i, pow in enumerate(POWER):
     print(STR[i]+": P = "+strpow+" mW")
 print("\n"+f"Radiated Power: Prad = {sum(POWER)*1e3:.3f} mW")
 
-Prad = sum(POWER) #Total power in the vacuum calculated
+Prad = sum(POWER) #Total power in the vacuum around gold radiated
 
 WL = 800e-9 #wavelength in m
 c = 299_792_458 #m/s
 k = 2*np.pi/WL
 
-p_norme = np.sqrt(12*np.pi*eps0/(c*k**4)*Prad)
+p_norme = 1.13e-24 #comes from pure vacuum sim
+P0 = 4.398e-3 #comes from pure vacuum sim
 
-print(f"Norme of dipole moment: {p_norme*1e24:.2f}e-24  C m"+"\n")
-
-E0z = 7.784208e3*1e6
-phi_e0 = 89.9521*np.pi/180
-phi_p = phi_e0+np.arcsin(2*Prad/(k*c*E0z*p_norme))
-phi_p2 = phi_e0+np.pi-np.arcsin(2*Prad/(k*c*E0z*p_norme)) #This value is not the right one.
+E0z =  7.744411e3*1e6
+phi_e0 = 89.7711*np.pi/180
+phi_p = phi_e0+np.arcsin(2*P0/(k*c*E0z*p_norme))
+phi_p2 = phi_e0+np.pi-np.arcsin(2*P0/(k*c*E0z*p_norme)) 
 print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°")
 print(f"The other theoretical value is {phi_p2*180/np.pi:.2f}°\n")
-
 Power_reconstruction_test = k*c/2*p_norme*np.sin(phi_p-phi_e0)*E0z
 Power_reconstruction_test2 = k*c/2*p_norme*np.sin(phi_p2-phi_e0)*E0z
 
@@ -110,10 +108,8 @@ def test_equal(Ptest,Pref):
     else:
         return "!="
 
-
-print(f"Reconstruction with first angle {phi_p*180/np.pi:.2f}°: {Power_reconstruction_test*1e3:.3f} mW {test_equal(Power_reconstruction_test,Prad)} Simulation {Prad*1e3:.3f} mW" )
-print(f"Reconstruction with second angle {phi_p2*180/np.pi:.2f}°: {Power_reconstruction_test2*1e3:.3f} mW {test_equal(Power_reconstruction_test2,Prad)} Simulation {Prad*1e3:.3f} mW" )
-print(f"Dephasage: {(phi_p-phi_e0)*180/np.pi:.2e}° or {(phi_p2-phi_e0)*180/np.pi:.2e}°\n")
+print(f"Phase shift: {(phi_p-phi_e0)*180/np.pi:.2e}° or {(phi_p2-phi_e0)*180/np.pi:.2e}°\n")
+print(f"Total power: Ptot = {Power_reconstruction_test*1e3:.2f} mW\n")
 
 P0 = 4.398e-3 #Calculated in CalcPoynting.py from Vacuum
 
