@@ -77,9 +77,9 @@ for i,axe in enumerate(ANames):
     for j,direction in enumerate(DNames):
         STR.append(axe+direction)
 
-for i, pow in enumerate(POWER):
-    strpow = f"{pow*1e3:.2e}"
-    print(STR[i]+": P = "+strpow+" mW")
+# for i, pow in enumerate(POWER):
+#     strpow = f"{pow*1e3:.2e}"
+#     print(STR[i]+": P = "+strpow+" mW")
 print("\n"+f"Radiated Power: Prad = {sum(POWER)*1e3:.3f} mW")
 
 Prad = sum(POWER) #Total power in the vacuum around gold radiated
@@ -93,12 +93,10 @@ P0 = 4.398e-3 #comes from pure vacuum sim
 
 E0z =  7.744411e3*1e6
 phi_e0 = 89.7711*np.pi/180
-phi_p = phi_e0+np.arcsin(2*P0/(k*c*E0z*p_norme))
-phi_p2 = phi_e0+np.pi-np.arcsin(2*P0/(k*c*E0z*p_norme)) 
+phi_p = 1.57079941
+p_norme = 1.13e-24
 print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°")
-print(f"The other theoretical value is {phi_p2*180/np.pi:.2f}°\n")
 Power_reconstruction_test = k*c/2*p_norme*np.sin(phi_p-phi_e0)*E0z
-Power_reconstruction_test2 = k*c/2*p_norme*np.sin(phi_p2-phi_e0)*E0z
 
 def test_equal(Ptest,Pref):
     Ptest = np.round(Ptest,3)
@@ -108,7 +106,7 @@ def test_equal(Ptest,Pref):
     else:
         return "!="
 
-print(f"Phase shift: {(phi_p-phi_e0)*180/np.pi:.2e}° or {(phi_p2-phi_e0)*180/np.pi:.2e}°\n")
+print(f"Phase shift: {(phi_p-phi_e0)*180/np.pi:.2e}°\n")
 print(f"Total power: Ptot = {Power_reconstruction_test*1e3:.2f} mW\n")
 
 P0 = 4.398e-3 #Calculated in CalcPoynting.py from Vacuum

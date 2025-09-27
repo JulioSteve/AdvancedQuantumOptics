@@ -77,9 +77,9 @@ for i,axe in enumerate(ANames):
     for j,direction in enumerate(DNames):
         STR.append(axe+direction)
 
-for i, pow in enumerate(POWER):
-    strpow = f"{pow*1e3:.2e}"
-    print(STR[i]+": P = "+strpow+" mW")
+# for i, pow in enumerate(POWER):
+#     strpow = f"{pow*1e3:.2e}"
+#     print(STR[i]+": P = "+strpow+" mW")
 print("\n"+f"Radiated Power: Prad = {sum(POWER)*1e3:.3f} mW")
 
 Prad = sum(POWER) #Total power in the vacuum calculated

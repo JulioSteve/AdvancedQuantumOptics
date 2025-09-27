@@ -77,9 +77,9 @@ for i,axe in enumerate(ANames):
     for j,direction in enumerate(DNames):
         STR.append(axe+direction)
 
-for i, pow in enumerate(POWER):
-    strpow = f"{pow*1e3:.2e}"
-    print(STR[i]+": P = "+strpow+" mW")
+# for i, pow in enumerate(POWER):
+#     strpow = f"{pow*1e3:.2e}"
+#     print(STR[i]+": P = "+strpow+" mW")
 print("\n"+f"Radiated Power: Prad = {sum(POWER)*1e3:.3f} mW")
 
 Prad = sum(POWER) #Total power in the vacuum calculated
@@ -90,26 +90,24 @@ k = 2*np.pi/WL
 
 E0z = 8.070205e3*1e6
 phi_e0 = 89.9995*np.pi/180
-phi_p = 0.15744093603944595; phi_p2 = 3.2982312911756804
+phi_p = 1.57079941
+phi_p2 = 4.71159003
 p_norme = 1.13e-24
 print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°")
-print(f"The other theoretical value is {phi_p2*180/np.pi:.2f}°\n")
 
 Power_reconstruction_test = k*c/2*np.imag(p_norme*np.exp(1j*phi_p)*E0z*np.exp(-1j*phi_e0))
-Power_reconstruction_test2 = k*c/2*np.imag(p_norme*np.exp(1j*phi_p2)*E0z*np.exp(-1j*phi_e0))
 
 def test_equal(Ptest,Pref):
     Ptest = np.round(Ptest,3)
     Pref = np.round(Pref,3)
     if Ptest == Pref:
-        return "=="
+        return "~="
     else:
         return "!="
 
 
-print(f"Reconstruction with first angle {phi_p*180/np.pi:.2f}°: {Power_reconstruction_test*1e3:.3f} mW {test_equal(Power_reconstruction_test,Prad)} Simulation {Prad*1e3:.3f} mW" )
-print(f"Reconstruction with second angle {phi_p2*180/np.pi:.2f}°: {Power_reconstruction_test2*1e3:.3f} mW {test_equal(Power_reconstruction_test2,Prad)} Simulation {Prad*1e3:.3f} mW" )
-print(f"Dephasage: {(phi_p-phi_e0)*180/np.pi:.2e}° or {(phi_p2-phi_e0)*180/np.pi:.2e}°\n")
+print(f"Reconstruction {phi_p*180/np.pi:.2f}°: {Power_reconstruction_test*1e3:.3f} mW {test_equal(Power_reconstruction_test,Prad)} Simulation {Prad*1e3:.3f} mW" )
+print(f"Phase shift: {(phi_p-phi_e0)*180/np.pi:.2e}°\n")
 
 P0 = 4.398e-3 #Calculated in CalcPoynting.py from Vacuum
 
