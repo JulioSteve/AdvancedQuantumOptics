@@ -115,6 +115,8 @@ print(f"Dephasage: {(phi_p-phi_e0)*180/np.pi:.2e}° or {(phi_p2-phi_e0)*180/np.p
 
 P0 = 4.398e-3 #Calculated in CalcPoynting.py from Vacuum
 
+print(f"Total power: Ptot = {Power_reconstruction_test*1e3:.3f} mW\n")
+
 gammar_gamma0 = Prad/P0
 gamma_gamma0 = Power_reconstruction_test/P0
 q = gammar_gamma0/gamma_gamma0

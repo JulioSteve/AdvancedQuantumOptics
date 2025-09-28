@@ -80,7 +80,7 @@ for i,axe in enumerate(ANames):
 # for i, pow in enumerate(POWER):
 #     strpow = f"{pow*1e3:.2e}"
 #     print(STR[i]+": P = "+strpow+" mW")
-print("\n"+f"Radiated Power: Prad = {sum(POWER)*1e3:.3f} mW")
+print("\n"+f"Radiated Power: Prad = {sum(POWER)*1e6:.3f} µW")
 
 Prad = sum(POWER) #Total power in the vacuum calculated
 
@@ -98,6 +98,8 @@ print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°")
 Power_reconstruction_test = k*c/2*np.imag(p_norme*np.exp(1j*phi_p)*E0z*np.exp(-1j*phi_e0))
 
 def test_equal(Ptest,Pref):
+    Ptest = Ptest*1e6
+    Pref = Pref*1e6
     Ptest = np.round(Ptest,3)
     Pref = np.round(Pref,3)
     if Ptest == Pref:
@@ -106,8 +108,10 @@ def test_equal(Ptest,Pref):
         return "!="
 
 
-print(f"Reconstruction {phi_p*180/np.pi:.2f}°: {Power_reconstruction_test*1e3:.3f} mW {test_equal(Power_reconstruction_test,Prad)} Simulation {Prad*1e3:.3f} mW" )
+print(f"Reconstruction {phi_p*180/np.pi:.2f}°: {Power_reconstruction_test*1e6:.3f} µW {test_equal(Power_reconstruction_test,Prad)} Simulation {Prad*1e6:.3f} µW" )
 print(f"Phase shift: {(phi_p-phi_e0)*180/np.pi:.2e}°\n")
+
+print(f"Total power: Ptot = {Power_reconstruction_test*1e6:.3f} µW\n")
 
 P0 = 4.398e-3 #Calculated in CalcPoynting.py from Vacuum
 

@@ -77,9 +77,9 @@ for i,axe in enumerate(ANames):
     for j,direction in enumerate(DNames):
         STR.append(axe+direction)
 
-for i, pow in enumerate(POWER):
-    strpow = f"{pow*1e3:.2f}"
-    print(STR[i]+": P = "+strpow+" mW")
+# for i, pow in enumerate(POWER):
+#     strpow = f"{pow*1e3:.2f}"
+#     print(STR[i]+": P = "+strpow+" mW")
 print("\n"+f"Total Power: Ptot = {sum(POWER)*1e3:.3f} mW")
 
 P0 = sum(POWER) #Total power in the vacuum calculated
@@ -96,9 +96,8 @@ E0x =  8.209492e3*1e6
 phi_e0 = 89.9772*np.pi/180
 phi_p = phi_e0+np.arcsin(2*P0/(k*c*E0x*p_norme))
 phi_p2 = phi_e0+np.pi-np.arcsin(2*P0/(k*c*E0x*p_norme)) #This value is not the right one.
-print(f"phi_p = {phi_p}; phi_p2 = {phi_p2}")
-print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}°")
-print(f"The other theoretical value is {phi_p2*180/np.pi:.2f}°\n")
+print(f"Angle of dipole moment: {phi_p*180/np.pi:.2f}° <=> {phi_p:.3f} rad")
+print(f"The other theoretical value is {phi_p2*180/np.pi:.2f}° <=> {phi_p2:.3f} rad\n")
 
 Power_reconstruction_test = k*c/2*p_norme*np.sin(phi_p-phi_e0)*E0x
 Power_reconstruction_test2 = k*c/2*p_norme*np.sin(phi_p2-phi_e0)*E0x
