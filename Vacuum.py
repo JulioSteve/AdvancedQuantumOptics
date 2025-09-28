@@ -6,8 +6,8 @@ mu0 = 4*np.pi*1e-7
 
 Z0 = np.sqrt(mu0/eps0)
 
-ANames = ["X","Y","Z"]
-DNames = ["bot","top"]
+ANames = ["x","y","z"]
+DNames = ["bottom","top"]
 FNames = "ex,ey,ez,hx,hy,hz".split(",")
 path = "VacuumDATA/"
 
@@ -18,7 +18,7 @@ Poynting = np.empty(shape=(6,3))
 for i,axe in enumerate(ANames):
     for j,direction in enumerate(DNames):
         for k,field in enumerate(FNames):
-            filename = "Res_"+axe+direction+"_f1_"+field+".dat"
+            filename = "dipole_vide_"+direction+"_"+axe+"_f1_"+field+".dat"
             file = np.loadtxt(path+filename, skiprows=4)
             AMP = file[:, ::2]
             PH = file[:, 1::2]*np.pi/180
@@ -92,8 +92,8 @@ p_norme = np.sqrt(12*np.pi*eps0/(c*k**4)*P0)
 
 print(f"Norme of dipole moment: {p_norme*1e24:.2f}e-24  C m"+"\n")
 
-E0x = 8.209492e3*1e6
-phi_e0 = 8.997717*np.pi/180
+E0x =  8.209492e3*1e6
+phi_e0 = 89.9772*np.pi/180
 phi_p = phi_e0+np.arcsin(2*P0/(k*c*E0x*p_norme))
 phi_p2 = phi_e0+np.pi-np.arcsin(2*P0/(k*c*E0x*p_norme)) #This value is not the right one.
 print(f"phi_p = {phi_p}; phi_p2 = {phi_p2}")

@@ -6,7 +6,7 @@
   <doc-data|<\doc-title>
     Advanced Quantum Optics:
 
-    Quantum Emitter (QE) simulation with FDTD
+    Quantum Emitter simulation with FDTD
   </doc-title>|<doc-author|<author-data|<author-name|Jules
   STEVENOT>|<\author-affiliation>
     September 2025
@@ -14,15 +14,18 @@
 
   <abstract-data|<\abstract>
     We will conduct in this paper a brief report of a practical work about
-    the simulation of a QE in various environments using FDTD software named
-    RSoft CAD Environment<math|<rsup|<tiny|TM>>>. This work is firstly made
-    as a first touch about FDTD simulation and QE study for M2 Physics
-    students.
+    the simulation of a Quantum Emitter (QE) in various environments using
+    FDTD software named RSoft CAD Environment<math|<rsup|<tiny|TM>>>. This
+    work is firstly made as a first touch about FDTD simulation and QE study
+    for M2 Physics students.
 
     The work consists in three different parts with different environment,
     firstly in Vacuum, then in air with a rectangular cuboid (PEC or gold
     material) interaction and lastly with (golden) plasmonic nano-antenna
     interaction.\ 
+
+    This work involves multiple Python codes in order to treat the different
+    data from simulations.
   </abstract>>
 
   <\table-of-contents|toc>
@@ -339,18 +342,18 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|2>>
-    <associate|auto-10|<tuple|5|?>>
+    <associate|auto-10|<tuple|5|8>>
     <associate|auto-2|<tuple|2|3>>
     <associate|auto-3|<tuple|2.1|3>>
     <associate|auto-4|<tuple|2.2|3>>
     <associate|auto-5|<tuple|2.3|4>>
     <associate|auto-6|<tuple|3|5>>
     <associate|auto-7|<tuple|3.1|5>>
-    <associate|auto-8|<tuple|3.2|?>>
-    <associate|auto-9|<tuple|4|?>>
+    <associate|auto-8|<tuple|3.2|6>>
+    <associate|auto-9|<tuple|4|7>>
     <associate|eqP1|<tuple|2|3>>
     <associate|eqP2|<tuple|3|3>>
-    <associate|eqP3|<tuple|9|?>>
+    <associate|eqP3|<tuple|9|3>>
     <associate|eqnorme|<tuple|6|3>>
     <associate|eqphase|<tuple|7|3>>
     <associate|lipsum|<tuple|1|2>>
@@ -387,6 +390,18 @@
       <with|par-left|<quote|1tab>|3.1<space|2spc>Vacuum - no material
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-7>>
+
+      <with|par-left|<quote|1tab>|3.2<space|2spc>Perfect Electrical Conductor
+      (PEC) case <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-8>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>(brief)
+      Discussion> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-9><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Conclusion>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-10><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
