@@ -73,17 +73,25 @@
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-11>>
 
-    <vspace*|1fn><with|font-series|bold|math-font-series|bold|4<space|2spc>(brief)
-    Discussion> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-12><vspace|0.5fn>
+    <with|par-left|1tab|3.4<space|2spc>QE with golden nanoantenna
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-12>>
 
-    <with|par-left|1tab|4.1<space|2spc>PEC discussion
+    <with|par-left|2tab|3.4.1<space|2spc>One antenna
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
     <no-break><pageref|auto-13>>
 
+    <with|par-left|2tab|3.4.2<space|2spc>Two antennas
+    <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-14>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|4<space|2spc>(brief)
+    Discussion> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+    <no-break><pageref|auto-15><vspace|0.5fn>
+
     <vspace*|1fn><with|font-series|bold|math-font-series|bold|5<space|2spc>Conclusion>
     <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
-    <no-break><pageref|auto-14><vspace|0.5fn>
+    <no-break><pageref|auto-16><vspace|0.5fn>
   </table-of-contents>
 
   <new-page>
@@ -92,59 +100,32 @@
 
   <label|lipsum>
 
-  <\strong>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed
-    sagittis justo. Proin dignissim lacus enim, id bibendum lorem blandit eu.
-    Morbi condimentum urna vel justo efficitur, ut tincidunt augue aliquam.
-    Pellentesque ut enim neque. Nullam porta ex nec neque semper, ac
-    fringilla risus porttitor. Proin vestibulum nulla vitae augue mattis
-    mollis. Curabitur a condimentum leo. Curabitur mollis tincidunt metus id
-    euismod. Mauris quis mollis ante. Curabitur sit amet nisl vel nunc
-    dapibus semper. Proin ut augue quis augue fringilla pulvinar. Duis turpis
-    est, sagittis eget efficitur tincidunt, finibus ac sem.
-
-    Sed lobortis felis ut tortor sodales ultricies. Duis egestas, felis eu
-    euismod tempor, neque orci ullamcorper metus, sed commodo nisi libero
-    vitae quam. In ac nunc at turpis ornare imperdiet eget porttitor mauris.
-    Integer eros diam, maximus porttitor felis et, ullamcorper lobortis
-    ipsum. Etiam vel nisl placerat, elementum ante eu, volutpat mauris. Donec
-    tristique posuere porttitor. Nullam eu nulla eget felis volutpat
-    fermentum. Nulla ac iaculis libero, in tempus mi. Vivamus sit amet libero
-    vitae nisl facilisis dapibus tempor eget orci. Cras eu enim diam.
-    Vestibulum elementum erat eget tincidunt scelerisque.
-
-    Sed sagittis luctus turpis vitae fringilla. Pellentesque risus erat,
-    suscipit id velit a, finibus feugiat orci. Donec finibus rhoncus neque,
-    in commodo magna. Pellentesque ut efficitur purus. Curabitur et felis sed
-    felis dapibus fermentum. Sed non dictum diam. Etiam sed finibus velit,
-    vitae vestibulum neque. Integer dui arcu, dictum quis dui sed, convallis
-    consectetur metus. Sed ut tempus metus. Aenean efficitur pretium justo
-    quis iaculis. Duis lacinia, eros at iaculis dapibus, risus tellus
-    convallis nisl, eget pellentesque tellus velit sed ex. Nam finibus mollis
-    ligula id consectetur.
-
-    Vestibulum consectetur enim vel quam tempus interdum. Cras eu erat nec
-    nulla facilisis bibendum at quis risus. Curabitur et porta enim, in
-    pulvinar ex. Cras nec felis in odio egestas congue. Nam id fringilla
-    quam, gravida vehicula ante. Praesent placerat nec lacus quis malesuada.
-    Interdum et malesuada fames ac ante ipsum primis in faucibus.
-
-    Nullam nec nisl ut dui vulputate venenatis a gravida risus. Aliquam
-    pretium neque massa, eu tempus massa consectetur ac. Aliquam interdum
-    odio sed tortor iaculis, in bibendum arcu convallis. Proin pretium
-    dapibus pharetra. Fusce elit tellus, scelerisque at volutpat at,
-    consectetur vitae tellus. Vivamus sit amet lectus pharetra, fermentum
-    erat et, lacinia turpis. Phasellus viverra enim vitae libero rhoncus, sed
-    ultricies nisi tristique. Aliquam erat volutpat. Sed erat lacus, tempus
-    eget ultrices sit amet, pretium id eros. Phasellus venenatis, odio in
-    elementum vestibulum, ipsum velit pulvinar arcu, tempor tempor sem turpis
-    vel sem. Quisque dui nibh, luctus ut dolor varius, malesuada fringilla
-    orci. Integer vel egestas lorem, eget rhoncus ipsum. Nunc egestas iaculis
-    ipsum, ornare finibus ipsum. Mauris congue dictum orci, sed suscipit sem
-    tincidunt sit amet.
+  <\large>
+    This report presents a brief study of a Quantum Emitter (QE) simulated in
+    different electromagnetic environments using FDTD method implemented in
+    <em|RSoft CAD Environment<math|<rsup|TM>>>. The objective is to observe
+    how the local environment affects the radiated power, decay rate and
+    quentum yield of the emitter.\ 
 
     \;
-  </strong>
+
+    Starting from a reference case in vacuum, we progressively introduce
+    interactions with a Perfect Electric Conductor (PEC), a gold surface, and
+    plasmonic nanoantennas in order to visualize how material properties and
+    geometry modify the emission characteristics.
+
+    \;
+
+    This work aims to provide a first contact with quantum optics simulation
+    tools and to connect it with numerical observations, using advanced
+    quantum physical concepts: the Local Density of States (LDOS).
+
+    \;
+
+    Please, feel free to look at the Python codes provided in order to link
+    it with the following analyses. The respective codes for each part is
+    specified in the following section.
+  </large>
 
   <new-page>
 
@@ -606,14 +587,83 @@
 
   Supringly, in this case the power is demultiplicated and we find high
   relative decay rates/ power either total or radiated for the lowest losses
-  (8%). We can think about it and see it as a resonance between both antenas.
-  This is finally the most interesting case that should be used during
-  experiments in order to recover the most results with amplified powers,
-  which is important for low values of power in order to be detected.\ 
+  (8%). We can think about it and see it as a resonance between both antenas,
+  which is called Purcell Effect. This is finally the most interesting case
+  that should be used during experiments in order to recover the most results
+  with amplified powers, which is important for low values of power in order
+  to be detected.\ 
 
   <new-page>
 
-  <section|(brief) Discussion><label|discPEC>
+  <section|Discussion><label|discPEC>
+
+  The variations observed in radiated and total powers can be interpreted
+  through the concept of the <strong|Local Density of States (LDOS)>. The
+  LDOS, noted <math|\<rho\><around*|(|<wide|r|\<vect\>>,\<omega\>|)>>,
+  represents the number of available electromagnetic modes per unit volume
+  and frequency at the emitter position <math|<wide|r|\<vect\>>>. It controls
+  the spontaneous emission rate <math|\<Gamma\>>:
+
+  <\eqnarray*>
+    <tformat|<table|<row|<cell|\<Gamma\><around*|(|<wide|r|\<vect\>>,\<omega\>|)>>|<cell|=>|<cell|<frac|\<pi\>*\<omega\>|3*\<hbar\>*\<varepsilon\><rsub|0>>*<around*|\||<wide|p|\<vect\>>|\|><rsup|2>*\<rho\><around*|(|<wide|r|\<vect\>>,\<omega\>|)><eq-number>>>>>
+  </eqnarray*>
+
+  Thus, any modification of the environment that alters
+  <math|\<rho\><around*|(|<wide|r|\<vect\>>,\<omega\>|)>> affects directly
+  the emission rate and thus the power and quantum yield of the QE!
+
+  <\itemize>
+    <item>Vacuum case:
+  </itemize>
+
+  In the free space, the LDOS is uniform and isotropic, leading to a
+  reference emission rate <math|\<Gamma\><rsub|0>> and power
+  <math|P<rsub|0>>.
+
+  <\itemize>
+    <item>PEC surface:
+  </itemize>
+
+  For a dipole perpendicular to a \Pperfect mirror\Q, the field reflected by
+  the PEC interferes (constructively) with the QE dipole field. This doubles
+  the LDOS near the emitter and we find something like
+  <math|<frac*|\<rho\>|\<rho\><rsub|0>>\<approx\>2> . This explains the
+  observed factor 2 in <math|P<rsub|r>> and the unity quantum yield
+  (<math|q\<approx\>1>) expliciting the non-absorption phenomenon using PEC.\ 
+
+  Conversely, when the dipole is parallel to the PEC, there is destructive
+  interfences that cancel local modes leading to extremely weak emission of
+  the QE.\ 
+
+  <\itemize>
+    <item>Gold case:
+  </itemize>
+
+  Here the material is absorbant which is seen with a quantum yield around
+  0.65. The LDOS description here can be seen as the Joule effect heating
+  (from absoprtion) that corresponds to excitation of non-radiative LDOS
+  modes.
+
+  <\itemize>
+    <item>Nanoantennas:
+  </itemize>
+
+  These kind of contraption creates a strong local field confinement and
+  resonance phenomenon of the LDOS. With one antenna, the LDOS and emission
+  rate increase by on order of magnitude; with two antennas, the coupliung
+  between LDOS modes produces a resonant cavity boosting effectively the
+  emission.
+
+  \;
+
+  Overall, the results confirm that the spontaneous emission rate of a QSE is
+  not an intrisic property of the emitter but depends highly on the
+  configuration of its surrounding. The goal can be seen as the optimization
+  of the environment in order to boost the LDOS (mirros structures, resonant
+  cavities, etc.) and try to reduce absorption (depends on the material used)
+  and reduce destructive interference. wri
+
+  \;
 
   <new-page>
 
@@ -644,6 +694,45 @@
   </big-table*>
 
   \;
+
+  Through different simulated environments used in this paper, we have shown
+  that the emission of a QE depends strongly on its surroundings. The PEC
+  case highlighted interference efefcts and orientation dependance between QE
+  dipole and the environment. The gold surface however introduced absorption
+  losses and the nanoantennas, by contrast, produced a strong enhancement of
+  the radiated power (which can be explained with LDOS
+  amplification/coupling).
+
+  These results confirm that the spontaneous emission rate is not dependant
+  solely on the QE but is dependant also on the electromagnetic environment.
+  Optimizing the environment \U by controlling materials, distances,
+  orientations, etc. \U is the key to improve light-matter interaction in
+  practical quantum / nanophotonic systems.
+
+  <section*|Bibliography>
+
+  The following references have been used to apprehend the subject and where
+  skimmed through and not very well developped, to barely have the keys to
+  understand how to treat this subject. \ 
+
+  <\itemize>
+    <item>L. Novotny and B. Hecht, <em|Principles of Nano-Optics>, 2nd ed.,
+    Cambridge University Press, 2012.
+
+    <math|\<Rightarrow\>> Used to understand LDOS mainly
+
+    <item>E. M. Purcell, \PSpontaneous Emission Probabilities at Radio
+    Frequencies,\Q <em|Physical Review>, vol. 69, p. 681, 1946.
+
+    <math|\<Rightarrow\>> Purcell effect - link between emission rate to the
+    photonic environment
+
+    <item>T. H. Taminiau, F. D. Stefani, and N. F. van Hulst, \POptical
+    Nanorod Antennas as Tunable Enhancers of Single-Molecule Emission,\Q
+    <em|Nano Letters>, vol. 11, pp. 1020\U1024, 2011.
+
+    <math|\<Rightarrow\>> plasmonic nanoantennas enhancing quantum emission
+  </itemize>
 </body>
 
 <\initial>
@@ -662,7 +751,8 @@
     <associate|auto-14|<tuple|3.4.2|9>>
     <associate|auto-15|<tuple|4|10>>
     <associate|auto-16|<tuple|5|11>>
-    <associate|auto-17|<tuple|5|?>>
+    <associate|auto-17|<tuple|5|11>>
+    <associate|auto-18|<tuple|5|11>>
     <associate|auto-2|<tuple|2|3>>
     <associate|auto-3|<tuple|2.1|3>>
     <associate|auto-4|<tuple|2.2|3>>
@@ -684,6 +774,11 @@
 
 <\auxiliary>
   <\collection>
+    <\associate|table>
+      <\tuple|normal>
+        Summing up all results of simulations
+      </tuple|<pageref|auto-17>>
+    </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Introduction>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
@@ -741,13 +836,17 @@
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-14>>
 
-      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>(brief)
-      Discussion> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|4<space|2spc>Discussion>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-15><vspace|0.5fn>
 
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|5<space|2spc>Conclusion>
       <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
       <no-break><pageref|auto-16><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|Bibliography>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-18><vspace|0.5fn>
     </associate>
   </collection>
 </auxiliary>
