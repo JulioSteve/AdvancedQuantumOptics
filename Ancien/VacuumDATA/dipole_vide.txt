@@ -1,0 +1,7 @@
+Monitor Results:
+	top_z |Ex| =  1.489383E+00
+	bottom_z |Ex| =  1.489383E+00
+	bottom_y |Ex| =  1.488274E+00
+	top_y |Ex| =  1.488276E+00
+	bottom_x |Ex| =  1.043290E+00
+	top_x |Ex| =  1.043289E+00

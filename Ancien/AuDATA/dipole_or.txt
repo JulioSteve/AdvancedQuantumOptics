@@ -1,0 +1,8 @@
+Monitor Results:
+	top_z |Ex| =  1.569372E-06
+	bottom_z |Ex| =  1.442600E-06
+	bottom_y |Ex| =  4.194468E-07
+	bottom_x |Ex| =  1.059753E+00
+	top_x |Ex| =  1.059754E+00
+	top_y |Ex| =  1.473838E-06
+	single_point |Ez| =  7.729067E+03, phase(Ez) = 89.8849

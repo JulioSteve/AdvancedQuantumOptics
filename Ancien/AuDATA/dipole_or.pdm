@@ -1,0 +1,14 @@
+!/xl"Frequency (Hz)" /sx2.99792458e14
+/xl"Frequency (f/c, &mm^{-1})"
+/yl"Monitor Value (a.u.)"
+/l/lh"Monitor Label,\nType, Location:\n"
+/ls1
+/znorm
+dipole_or_top_z_ex.dmn /st/zin6 /lt"top\_z\nEx^2, (0,0,0.4)"
+dipole_or_bottom_z_ex.dmn /st/zin6 /lt"bottom\_z\nEx^2, (0,0,-0.4)"
+dipole_or_bottom_y_ex.dmn /st/zin6 /lt"bottom\_y\nEx^2, (0,-0.4,0)"
+dipole_or_bottom_x_ex.dmn /st/zin6 /lt"bottom\_x\nEx^2, (-0.4,0,0)"
+dipole_or_top_x_ex.dmn /st/zin6 /lt"top\_x\nEx^2, (0.4,0,0)"
+dipole_or_top_y_ex.dmn /st/zin6 /lt"top\_y\nEx^2, (0,0.4,0)"
+dipole_or_single_point_ez.dmn /st/zin2 /lt"single\_point\nEz^2, (0,0,0)"
+dipole_or.smn /zin2 /lt"Source"

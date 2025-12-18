@@ -1,0 +1,2 @@
+Monitor Results:
+	E0 |Ex| =  7.744411E+03, phase(Ex) = 89.7711

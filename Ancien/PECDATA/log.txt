@@ -1,0 +1,145 @@
+spawning cmd=fwmpirun -np5 fwtmp.ind!
+spawning cmd=mpiexec -np 5 -localroot -env I_MPI_PIN_DOMAIN socket -env I_MPI_WAIT_MODE 1 -noprompt -wdir C:\Users\jsteven2\Documents\AdvQuanOpt\2ndDATA C:\Synopsys\PhotonicSolutions\2023.03-SP1\RSoft\bin\fullwave.exe fwtmp.ind fdtd_usefloat=1 cliq_file=cliques_6868.txt rsoft_completion_file=done_6868.txt >mpiexeclog.txt!
+
+SimTool: FullWAVE
+Version: 2023.03-SP1 Build 20230525
+
+Rank 2: MPI_Init Called, NumProcs=5, mypid=10300.
+Rank 0: MPI_Init Called, NumProcs=5, mypid=7188.
+Rank 1: MPI_Init Called, NumProcs=5, mypid=16904.
+Rank 3: MPI_Init Called, NumProcs=5, mypid=8248.
+Rank 4: MPI_Init Called, NumProcs=5, mypid=4728.
+My Rank is 3.
+My Rank is 4.
+My Rank is 2.
+Rank 1: FDTD estimated simulation memory usage: 91.4432 MB
+Using MPI Enabled Code
+imulation memory usage: 91.4432 MB
+NumProcs is 5.
+My Rank is 0.
+FDTD Auto Time Step = 0.00571429, Stability Limit = 0.0057735
+FDTD grid info: NX=181 NY=181 NZ=181, NT=1050
+Rank 0: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 0: Rank in X cut dir 0: NX=34
+Rank 0: Rank in X cut dir 1: NX=39
+Rank 0: Rank in X cut dir 2: NX=39
+Rank 0: Rank in X cut dir 3: NX=39
+Rank 0: Rank in X cut dir 4: NX=34
+Rank 1: FDTD estimated monitor memory usage: 0.000256 MB
+Rank 0: FDTD estimated monitor memory usage: 19.4542 MB
+Rank 3: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 2: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 0: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 1: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 0: FullWAVE Query:
+Really Abort Computation?
+spawning cmd=fwmpirun -np5 fwtmp.ind!
+spawning cmd=mpiexec -np 5 -localroot -env I_MPI_PIN_DOMAIN socket -env I_MPI_WAIT_MODE 1 -noprompt -wdir C:\Users\jsteven2\Documents\AdvQuanOpt\2ndDATA C:\Synopsys\PhotonicSolutions\2023.03-SP1\RSoft\bin\fullwave.exe fwtmp.ind fdtd_usefloat=1 cliq_file=cliques_10148.txt rsoft_completion_file=done_10148.txt >mpiexeclog.txt!
+
+SimTool: FullWAVE
+Version: 2023.03-SP1 Build 20230525
+
+Rank 2: MPI_Init Called, NumProcs=5, mypid=15584.
+Rank 3: MPI_Init Called, NumProcs=5, mypid=10888.
+Rank 4: MPI_Init Called, NumProcs=5, mypid=14708.
+Rank 1: MPI_Init Called, NumProcs=5, mypid=7456.
+Rank 0: MPI_Init Called, NumProcs=5, mypid=12148.
+My Rank is 4.
+My Rank is 1.
+My Rank is 3.
+My Rank is 2.
+Rank 4: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 1: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 2: FDTD estimated simulation memory usage: 91.4432 MB
+Using MPI Enabled Code
+NumProcs is 5.
+My Rank is 0.
+FDTD Auto Time Step = 0.00571429, Stability Limit = 0.0057735
+FDTD grid info: NX=181 NY=181 NZ=181, NT=1050
+Rank 0: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 0: Rank in X cut dir 0: NX=34
+Rank 0: Rank in X cut dir 1: NX=39
+Rank 0: Rank in X cut dir 2: NX=39
+Rank 0: Rank in X cut dir 3: NX=39
+Rank 0: Rank in X cut dir 4: NX=34
+Rank 0: FDTD estimated monitor memory usage: 19.4559 MB
+
+Rank 3: FDTD estimated monitor memory usage: 0.000256 MB
+Rank 1: FDTD estimated monitor memory usage: 0.000256 MB
+Rank 4: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 2: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 0: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 3: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Actual Computation Time = 0.849 min (WALL = 0.849)
+spawning cmd=fwmpirun -np5 fwtmp.ind!
+spawning cmd=mpiexec -np 5 -localroot -env I_MPI_PIN_DOMAIN socket -env I_MPI_WAIT_MODE 1 -noprompt -wdir C:\Users\jsteven2\Documents\AdvQuanOpt\2ndDATA C:\Synopsys\PhotonicSolutions\2023.03-SP1\RSoft\bin\fullwave.exe fwtmp.ind fdtd_usefloat=1 cliq_file=cliques_16516.txt rsoft_completion_file=done_16516.txt >mpiexeclog.txt!
+
+SimTool: FullWAVE
+Version: 2023.03-SP1 Build 20230525
+
+Rank 3: MPI_Init Called, NumProcs=5, mypid=5404.
+Rank 4: MPI_Init Called, NumProcs=5, mypid=8424.
+Rank 0: MPI_Init Called, NumProcs=5, mypid=7204.
+Rank 1: MPI_Init Called, NumProcs=5, mypid=12620.
+Rank 2: MPI_Init Called, NumProcs=5, mypid=9244.
+My Rank is 3.
+My Rank is 1.
+My Rank is 2.
+Rank 3: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 4: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 1: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 2: FDTD estimated simulation memory usage: 91.4432 MB
+Using MPI Enabled Code
+NumProcs is 5.
+My Rank is 0.
+FDTD Auto Time Step = 0.00571429, Stability Limit = 0.0057735
+FDTD grid info: NX=181 NY=181 NZ=181, NT=1050
+Rank 0: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 0: Rank in X cut dir 0: NX=34
+Rank 0: Rank in X cut dir 1: NX=39
+Rank 0: Rank in X cut dir 2: NX=39
+Rank 0: Rank in X cut dir 3: NX=39
+Rank 0: Rank in X cut dir 4: NX=34
+Rank 0: FDTD estimated monitor memory usage: 19.4559 MB
+
+Rank 4: FDTD estimated monitor memory usage: 0.000256 MB
+Rank 2: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 4: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 0: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 0: FullWAVE Query:
+Really Abort Computation?
+spawning cmd=fwmpirun -np5 fwtmp.ind!
+spawning cmd=mpiexec -np 5 -localroot -env I_MPI_PIN_DOMAIN socket -env I_MPI_WAIT_MODE 1 -noprompt -wdir C:\Users\jsteven2\Documents\AdvQuanOpt\2ndDATA C:\Synopsys\PhotonicSolutions\2023.03-SP1\RSoft\bin\fullwave.exe fwtmp.ind fdtd_usefloat=1 cliq_file=cliques_12188.txt rsoft_completion_file=done_12188.txt >mpiexeclog.txt!
+
+SimTool: FullWAVE
+Version: 2023.03-SP1 Build 20230525
+
+Rank 1: MPI_Init Called, NumProcs=5, mypid=12392.
+Rank 2: MPI_Init Called, NumProcs=5, mypid=8900.
+Rank 3: MPI_Init Called, NumProcs=5, mypid=1240.
+Rank 0: MPI_Init Called, NumProcs=5, mypid=4460.
+Rank 4: MPI_Init Called, NumProcs=5, mypid=13936.
+My Rank is 1.
+My Rank is 3.
+My Rank is 4.
+Rank 2: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 1: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 4: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 3: FDTD estimated simulation memory usage: 91.4432 MB
+Using MPI Enabled Code
+NumProcs is 5.
+My Rank is 0.
+FDTD Auto Time Step = 0.00571429, Stability Limit = 0.0057735
+FDTD grid info: NX=181 NY=181 NZ=181, NT=1050
+Rank 0: FDTD estimated simulation memory usage: 91.4432 MB
+Rank 0: Rank in X cut dir 0: NX=34
+Rank 0: Rank in X cut dir 1: NX=39
+Rank 0: Rank in X cut dir 2: NX=39
+Rank 0: Rank in X cut dir 3: NX=39
+Rank 0: Rank in X cut dir 4: NX=34
+Rank 1: FDTD estimated monitor memory usage: 0.000256 MB
+Rank 0: FDTD estimated monitor memory usage: 19.4559 MB
+Rank 2: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 4: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Rank 0: FDTD actual memory usage: 0 + 0 (base) = 0 MB
+Actual Computation Time = 0.751 min (WALL = 0.751)
